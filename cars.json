@@ -1,0 +1,6 @@
+[
+    { "id": 1, "image": "car1.jpg", "name": "Car 1", "votes": 0 },
+    { "id": 2, "image": "car2.jpg", "name": "Car 2", "votes": 0 },
+    { "id": 3, "image": "car3.jpg", "name": "Car 3", "votes": 0 },
+    { "id": 4, "image": "car4.jpg", "name": "Car 4", "votes": 0 } 
+]
