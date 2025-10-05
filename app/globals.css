@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to romantic pink color scheme with proper saturation */
+  --background: oklch(0.98 0.015 15); /* Soft pink-tinted white */
+  --foreground: oklch(0.25 0.05 15); /* Deep warm brown */
+  --card: oklch(1 0.01 15); /* Pure white with hint of pink */
+  --card-foreground: oklch(0.25 0.05 15);
+  --popover: oklch(1 0.01 15);
+  --popover-foreground: oklch(0.25 0.05 15);
+  --primary: oklch(0.65 0.18 15); /* Rose pink */
+  --primary-foreground: oklch(0.99 0.01 15);
+  --secondary: oklch(0.95 0.03 30); /* Soft peach */
+  --secondary-foreground: oklch(0.25 0.05 15);
+  --muted: oklch(0.96 0.02 15);
+  --muted-foreground: oklch(0.5 0.05 15);
+  --accent: oklch(0.75 0.15 350); /* Warm pink accent */
+  --accent-foreground: oklch(0.99 0.01 15);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.01 15);
+  --border: oklch(0.92 0.02 15);
+  --input: oklch(0.95 0.02 15);
+  --ring: oklch(0.65 0.18 15);
+  --chart-1: oklch(0.7 0.2 15);
+  --chart-2: oklch(0.75 0.15 350);
+  --chart-3: oklch(0.8 0.12 30);
+  --chart-4: oklch(0.65 0.18 340);
+  --chart-5: oklch(0.7 0.16 20);
+  --radius: 1.5rem; /* Increased for softer, less boxy look */
+  --sidebar: oklch(0.99 0.01 15);
+  --sidebar-foreground: oklch(0.25 0.05 15);
+  --sidebar-primary: oklch(0.65 0.18 15);
+  --sidebar-primary-foreground: oklch(0.99 0.01 15);
+  --sidebar-accent: oklch(0.95 0.03 30);
+  --sidebar-accent-foreground: oklch(0.25 0.05 15);
+  --sidebar-border: oklch(0.92 0.02 15);
+  --sidebar-ring: oklch(0.65 0.18 15);
+}
+
+.dark {
+  /* Updated dark mode to use warm, romantic tones instead of pure black */
+  --background: oklch(0.2 0.03 15); /* Deep warm brown instead of black */
+  --foreground: oklch(0.98 0.015 15);
+  --card: oklch(0.25 0.03 15);
+  --card-foreground: oklch(0.98 0.015 15);
+  --popover: oklch(0.25 0.03 15);
+  --popover-foreground: oklch(0.98 0.015 15);
+  --primary: oklch(0.75 0.15 350);
+  --primary-foreground: oklch(0.2 0.03 15);
+  --secondary: oklch(0.3 0.04 30);
+  --secondary-foreground: oklch(0.98 0.015 15);
+  --muted: oklch(0.3 0.04 15);
+  --muted-foreground: oklch(0.7 0.05 15);
+  --accent: oklch(0.35 0.05 350);
+  --accent-foreground: oklch(0.98 0.015 15);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.98 0.015 15);
+  --border: oklch(0.3 0.04 15);
+  --input: oklch(0.3 0.04 15);
+  --ring: oklch(0.75 0.15 350);
+  --chart-1: oklch(0.7 0.2 15);
+  --chart-2: oklch(0.75 0.15 350);
+  --chart-3: oklch(0.8 0.12 30);
+  --chart-4: oklch(0.65 0.18 340);
+  --chart-5: oklch(0.7 0.16 20);
+  --sidebar: oklch(0.25 0.03 15);
+  --sidebar-foreground: oklch(0.98 0.015 15);
+  --sidebar-primary: oklch(0.75 0.15 350);
+  --sidebar-primary-foreground: oklch(0.98 0.015 15);
+  --sidebar-accent: oklch(0.3 0.04 30);
+  --sidebar-accent-foreground: oklch(0.98 0.015 15);
+  --sidebar-border: oklch(0.3 0.04 15);
+  --sidebar-ring: oklch(0.75 0.15 350);
+}
+
+@theme inline {
+  /* Adding custom animations for romantic effects */
+  --animate-fadeInUp: fadeInUp 0.8s ease-out;
+  --animate-heartbeat: heartbeat 1.5s ease-in-out infinite;
+  --animate-floatUp: floatUp 10s ease-in infinite;
+  --animate-fadeIn: fadeIn 0.3s ease-out;
+  --animate-scaleIn: scaleIn 0.3s ease-out;
+  --font-dancing-script: Dancing Script;
+  --font-geist-sans: Geist Sans;
+  --font-geist-mono: Geist Mono;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations for romantic website effects */
+@layer utilities {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.6;
+    }
+    90% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 2.5s ease-in-out infinite;
+  }
+
+  .animate-floatUp {
+    animation: floatUp 10s ease-in infinite;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 0.3s ease-out;
+  }
+}
